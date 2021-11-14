@@ -8,7 +8,7 @@ class Shape {
     public:
         virtual string name() = 0;
         virtual int area() = 0;
-    };
+};
 
 class Rectangle : public Shape {
     private:
@@ -18,8 +18,8 @@ class Rectangle : public Shape {
     public:
 
         Rectangle(int h, int w) {
-            this->length = h;
-            this->breadth = w;
+            length = h;
+            breadth = w;
         }
 
         string name() {
@@ -38,8 +38,8 @@ class Square : public Shape {
 
     public:
 
-        Square(int length) {
-             this->length = length;
+        Square(int l) {
+             length = l;
         }
 
         string name() {
@@ -47,25 +47,49 @@ class Square : public Shape {
         }
 
         int area() {
-            int area = length ^ 2;
+            int area = length * length;
+            return area;
+        }  
+};
+
+class Triangle : public Shape {
+    private:
+         int height;
+         int base;
+
+    public:
+
+        Triangle(int h, int b) {
+             height = h;
+             base = b;
+        }
+
+        string name() {
+            return "Triangle";
+        }
+
+        int area() {
+            int area = (base * height)/2;
             return area;
         }  
 };
 
 int main() {
 
-    // Without virtual functions
+  //  Without virtual functions
 
-    Rectangle rect = Rectangle(20,30);
-    Square square = Square(10);
+    // Rectangle rect = Rectangle(20,30);
+    // Square square = Square(10);
 
-    cout<< "Area of this "<< rect.name() << " is "  << rect.area() << "\n";
-    cout<< "Area of this "<< square.name() << " is "  << square.area()<< "\n";
+    // cout<< "Area of this "<< rect.name() << " is "  << rect.area() << "\n";
+    // cout<< "Area of this "<< square.name() << " is "  << square.area()<< "\n";
 
     // Using virtual functions
     Shape *shape1 = new Rectangle(20,30);
     Shape *shape2 = new Square(10);
+    Shape *shape3 = new Triangle(10, 5);
 
     cout<< "Area of this "<< shape1->name() << " is "  << shape1->area()<< "\n";
     cout<< "Area of this "<< shape2->name() << " is "  << shape2->area()<< "\n";
+    cout<< "Area of this "<< shape3->name() << " is "  << shape3->area()<< "\n";
 }
