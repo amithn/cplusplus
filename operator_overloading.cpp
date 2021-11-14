@@ -29,7 +29,6 @@ class Car {
         int fuel;
     
     public:
-
         Car(string name, int fuel) {
             this->name = name;
             this->fuel = fuel;
