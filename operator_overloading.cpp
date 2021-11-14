@@ -5,7 +5,8 @@
 
 using namespace std;
 
-/* Class example also demonstrates access specifiers */
+/* Example demonstrates operator overloading where a Petrol can be added (+) to a Car class 
+   using Operator overloading */
 
 class Petrol {
     private: 
