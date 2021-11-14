@@ -24,7 +24,6 @@ class Petrol {
 
 
 class Car {
-
     private:
         string name;
         int fuel;
@@ -49,7 +48,6 @@ class Car {
 
 int main() {
     Car benz = Car("Mercedes Benz", 20);
-    
 
     // Check fuel in the Benz
     cout<<"Fuel in the Benz before is: "<< benz.checkFuelLevel() << " Litres" << endl;
